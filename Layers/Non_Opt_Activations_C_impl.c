@@ -25,3 +25,16 @@ void batchLeakyBackward(const float* input,float* output,const int32_t* size){
         output[i]=leaky_gradient(*input);
     }
 }
+
+void batchSigmoidForward(const float* input,float* output,const int32_t* size){
+    for (int32_t i = 0; i < *size; i++)
+    {
+        output[i]=sigmoid_activate(*input);
+    }
+}
+void batchSigmoidBackward(const float* input,float* output,const int32_t* size){
+    for (int32_t i = 0; i < *size; i++)
+    {
+        output[i]=sigmoid_gradient(*input);
+    }
+}
